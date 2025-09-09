@@ -4,7 +4,12 @@ import spacy
 
 # Load spaCy English model.
 # May need to download it first : python -m spacy download en_core_web_sm
-nlp = spacy.load("en_core_web_sm")
+try:
+    nlp = spacy.load('en_core_web_sm')
+except OSError:
+    print("Spacy model 'en_core_web_sm' not found.")
+    print("Please run 'python -m spacy download en_core_web_sm' to install it.")
+    exit()
 stopwords = nlp.Defaults.stop_words
 
 # Load the Dataset
