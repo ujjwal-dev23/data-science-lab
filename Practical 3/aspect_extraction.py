@@ -20,8 +20,6 @@ except FileNotFoundError:
 
 # --- Aspect Extraction Function ---
 def extract_aspects(text : str):
-    aspects = []
-    
     # Process the text with spaCy
     doc = nlp(text)
     
